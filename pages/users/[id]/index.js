@@ -11,6 +11,8 @@ export default function User() {
   return (
     <>
       <h1>Hello from {id}</h1>
+      <h3>{user?.firstName}</h3>
+      <h3>{user?.lastName}</h3>
     </>
   );
 }

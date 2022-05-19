@@ -94,7 +94,9 @@ export default function Users() {
             {users.map((user, idx) => {
               return (
                 <tr key={idx}>
-                  <th scope="row">{idx + 1}</th>
+                  <Link href={`/users/${idx}`}>
+                    <th scope="row">{idx + 1}</th>
+                  </Link>
                   <td>{user.firstName}</td>
                   <td>{user.lastName}</td>
                   <td>
