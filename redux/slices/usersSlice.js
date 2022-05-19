@@ -10,10 +10,19 @@ export const usersSlice = createSlice({
   ],
   reducers: {
     addUser: (state, action) => {
-      const { firstName, lastName } = action.payload;
+      const { id, firstName, lastName } = action.payload;
       state.push({ firstName, lastName });
+    },
+    updateUser: (state, action) => {
+      const { firstName, lastName } = action.payload.forms;
+      const { selectedIndex } = action.payload;
+      state.splice(selectedIndex, 1, { firstName, lastName });
+    },
+    deleteUser: (state, action) => {
+      const userIdx = action.payload;
+      state.splice(userIdx, 1);
     },
   },
 });
 
-export const { addUser } = usersSlice.actions;
+export const { addUser, updateUser, deleteUser } = usersSlice.actions;
